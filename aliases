@@ -1,0 +1,11 @@
+# View the first 10 rows and 10 columns of a file in formatted columns
+peek() {
+	perl -ane 'exit if $. > 10; print join("\t", @F[0..10]) . "\n"' $1 | column -t
+}
+
+# ls colours
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Show current directory path at shell prompt
+export PS1='\u@:\w$ '
